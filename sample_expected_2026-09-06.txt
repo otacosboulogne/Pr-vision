@@ -1,0 +1,39 @@
+Contrôle attendu avec Export_Mix_Produit-4.xlsx (avant apprentissage) :
+
+Date : 06/09/2026
+CA journalier détecté : 4213,94 €
+
+Viandes Inpulse :
+- Poulet Mariné : 53,30
+- Poulet Nature : 22,78
+- Merguez : 35,43
+- Kebab : 30,38
+- Viande Hachée : 73,56
+
+Sauce, tailles de base :
+- M : 98,39
+- L : 154,67
+- XL : 77,52
+
+Ajustements détectés :
+- Sans sauce Otacos M : 8,74
+- Sans sauce Otacos L : 8,29
+- Sans sauce Otacos XL : 4,98
+- Supplément sauce fromagère : 1,92
+- O'Mini total : 17,29
+- Sans sauce O'Mini : 0,06
+- Frit'Otacos : 7,44
+- Frites sauce fromagère : 0,33
+- Beaucoup de sauce : 21,38 (grammage = 0 par défaut)
+- Sans sauce Obowl : 1,04 (grammage = 0 par défaut)
+- CrO'usty Sauce fromagère : 0,35 (grammage = 0 par défaut)
+
+Plan V1 attendu avec les paramètres actuels, sans historique :
+- Poulet Mariné : MIDI 1,25 / SOIR 1,75
+- Poulet Nature : MIDI 1,50 / SOIR 2,00
+- Merguez : MIDI 1,00 / SOIR 1,00
+- Kebab : MIDI 2,00 / SOIR 3,00
+- Viande Hachée : MIDI 2,00 / SOIR 2,50
+- Sauce Fromagère : MIDI 6,00 / SOIR 9,00
+
+La prépa minimum est déjà intégrée dans ces valeurs.
