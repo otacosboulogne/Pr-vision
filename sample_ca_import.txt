@@ -1,0 +1,7 @@
+Format CA reconnu :
+A: DATE
+B: CA Prév BSM
+E: DATE
+F: CA Prév ARS
+
+L'import est archivé séparément et n'influence pas les prévisions de production.
