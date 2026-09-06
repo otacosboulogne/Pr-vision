@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111111" />
+  <title>O'Tacos | Accès Équipe</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-entry="team">
+  <header class="app-header">
+    <div class="brand">
+      <img src="assets/otacos-logo.png" alt="O'Tacos" class="brand-logo" />
+      <div class="brand-copy">
+        <div class="brand-kicker">PILOTAGE PRODUCTION</div>
+        <div class="brand-title">Accès Équipe · <span id="teamRestaurantName">—</span></div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <span id="pendingCountBadge" class="storage-badge">Chargement…</span>
+      <span id="storageBadge" class="storage-badge">Google Sheets + Drive</span>
+      <button id="btnRefresh" class="icon-btn" title="Actualiser" aria-label="Actualiser">↻</button>
+    </div>
+  </header>
+
+  <nav class="nav-tabs team-nav" aria-label="Navigation équipe">
+    <button class="nav-tab active" data-view="actual" type="button">Services à valider</button>
+    <button class="nav-tab" data-view="documents" type="button">Fiches PDF</button>
+  </nav>
+
+  <main class="app-shell">
+    <section id="statusBox" class="status hidden"></section>
+
+    <section id="view-actual" class="app-view active">
+      <article class="panel real-service-panel">
+        <div class="panel-title-row">
+          <div>
+            <span class="section-tag">SAISIE DU RÉEL</span>
+            <h1 id="realPageTitle">Réel du service MIDI</h1>
+            <div id="teamRestaurantTitle" class="team-restaurant-title">O'TACOS</div>
+          </div>
+          <div class="service-status-group">
+            <span id="midiValidationBadge" class="service-status">MIDI · À valider</span>
+            <span id="soirValidationBadge" class="service-status">SOIR · À valider</span>
+          </div>
+        </div>
+
+        <div class="real-service-toolbar">
+          <label class="compact-field day-selector-wrap">
+            <span>Journée</span>
+            <select id="realDaySelect"></select>
+          </label>
+          <div class="service-toggle" role="group" aria-label="Service">
+            <button id="btnServiceMidi" class="service-toggle-btn active" data-service="MIDI" type="button">MIDI</button>
+            <button id="btnServiceSoir" class="service-toggle-btn" data-service="SOIR" type="button">SOIR</button>
+          </div>
+          <label class="compact-field responsible-field">
+            <span>Responsable du service</span>
+            <select id="serviceResponsible">
+              <option value="">Choisir…</option>
+              <option value="Guillaume">Guillaume</option>
+              <option value="Pape">Pape</option>
+              <option value="Ziad">Ziad</option>
+              <option value="Imane">Imane</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="realEmpty" class="empty-state">Chargement des journées…</div>
+        <div id="realWorkspace" class="hidden">
+          <div class="real-topline service-real-topline">
+            <div class="day-id-card">
+              <strong id="realRestaurant">—</strong>
+              <span id="realDate">—</span>
+            </div>
+            <div class="readonly-kpi">
+              <span id="serviceForecastLabel">Prévision ajustée MIDI</span>
+              <strong id="serviceForecastTotal">—</strong>
+            </div>
+            <label id="actualCAField" class="compact-field ca-field hidden">
+              <span>CA réel journée</span>
+              <input id="actualCA" type="number" step="0.01" min="0" placeholder="0,00" />
+            </label>
+            <div id="forecastCAField" class="readonly-kpi hidden">
+              <span>CA prévu</span>
+              <strong id="actualForecastCA">—</strong>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table id="actualTable" class="data-table real-table service-table">
+              <thead>
+                <tr>
+                  <th>Produit</th>
+                  <th>Prépa prévue</th>
+                  <th>Prépa lancée</th>
+                  <th>Ajout pendant service</th>
+                  <th>Réel total service</th>
+                  <th>Prévision ajustée</th>
+                  <th>Écart</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="closure-footer service-footer">
+            <label id="commentField" class="field comment-field hidden">
+              <span>Commentaire journée</span>
+              <input id="comment" type="text" placeholder="" />
+            </label>
+            <button id="btnValidateService" class="btn primary">Valider le service MIDI</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="view-documents" class="app-view">
+      <article class="panel">
+        <div class="panel-title-row">
+          <div>
+            <span class="section-tag">ARCHIVES DRIVE</span>
+            <h1>Fiches de production</h1>
+          </div>
+        </div>
+        <div class="analysis-toolbar documents-toolbar">
+          <select id="documentsRestaurant" class="hidden" aria-hidden="true"><option value="ALL">Tous</option><option value="BSM">Boulogne-sur-Mer</option><option value="ARS">Armentières</option></select>
+          <label class="compact-field"><span>Période</span><select id="documentsPeriod"><option value="day">Jour</option><option value="week">Semaine</option><option value="month" selected>Mois</option><option value="year">Année</option></select></label>
+          <label class="compact-field"><span>Date</span><input id="documentsDate" type="date" /></label>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="documentsTable">
+            <thead><tr><th>Date</th><th>Restaurant</th><th>Statut</th><th>Responsable MIDI</th><th>Responsable SOIR</th><th>Prévision PDF</th><th>Clôture PDF</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
