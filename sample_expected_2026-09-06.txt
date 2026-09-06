@@ -1,0 +1,22 @@
+Référence de test V2.8 PERFORMANCE - fichier Inpulse du 06/09/2026
+
+Avec les paramètres actuels et sans historique :
+
+Poulet Mariné     MIDI 1,25 | SOIR 1,75
+Poulet Nature     MIDI 1,50 | SOIR 2,00
+Merguez           MIDI 1,00 | SOIR 1,00
+Kebab             MIDI 2,00 | SOIR 3,00
+Viande Hachée     MIDI 2,00 | SOIR 2,50
+
+Sauce Fromagère :
+Besoin calculé journée ≈ 32,22 kg
+MIDI ≈ 12,89 kg -> 5 x 2,2 kg + 2 x 1 kg = 13,00 kg
+SOIR ≈ 19,33 kg -> 8 x 2,2 kg + 1,75 x 1 kg = 19,35 kg
+
+Prépa fixe :
+Poulet Mariné 1 / 1
+Poulet Nature 1 / 1
+Merguez 1 / 1
+Kebab 2 / 2
+Viande Hachée 2 / 2
+Sauce Fromagère 4 poches 2,2 kg / 4 poches 2,2 kg
